@@ -2,7 +2,7 @@ package com.example.milosklimenta.contactslist;
 
 import java.io.Serializable;
 
-public class Contact {
+public class Contact implements Serializable {
 
     private String contactImage, contactName, ContactNumber;
     private String id;

@@ -57,9 +57,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
 
         final  ImageView contact_image = holder.contactImage;
 
-        if(mList.get(position).getContactImage() != null){
+        if(contact.getContactImage() == null){
+            contact_image.setImageResource(R.drawable.avatar);
+        }else{
             Picasso.with(mContext)
-                    .load(mList.get(position).getContactImage())
+                    .load(contact.getContactImage())
                     .into(contact_image);
         }
 
@@ -71,7 +73,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ContactInfoActivity.class);
-                intent.putExtra("oneContact", position);
+                intent.putExtra("oneContact", contact);
                 mContext.startActivity(intent);
             }
         });

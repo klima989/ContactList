@@ -26,6 +26,7 @@ public class ContactInfoActivity extends Activity {
     TextView mName, mNumber;
     Context mContext;
     TextToSpeech t1;
+    Contact contact;
 
 
     @Override
@@ -35,19 +36,21 @@ public class ContactInfoActivity extends Activity {
         inicijalizacija();
 
         Intent i = getIntent();
-        final int position;
-        position = i.getIntExtra("oneContact", 0);
-        mName.setText(ListAdapter.mList.get(position).getContactName());
-        mNumber.setText(ListAdapter.mList.get(position).getContactNumber());
+        contact = (Contact) i.getSerializableExtra("oneContact");
 
-        if (ListAdapter.mList.get(position).getContactImage() != null) {
+      //  final int position;
+      //  position = i.getIntExtra("oneContact", 0);
+        mName.setText(contact.getContactName());
+        mNumber.setText(contact.getContactNumber());
+
+        if (contact.getContactImage() != null) {
             Picasso.with(getApplicationContext())
-                    .load(ListAdapter.mList.get(position).getContactImage())
+                    .load(contact.getContactImage())
                     .into(mImage);
         }
 
-        mName.setContentDescription(ListAdapter.mList.get(position).getContactName());
-        mNumber.setContentDescription(ListAdapter.mList.get(position).getContactNumber());
+        mName.setContentDescription(contact.getContactName());
+        mNumber.setContentDescription(contact.getContactNumber());
 
 
     }
