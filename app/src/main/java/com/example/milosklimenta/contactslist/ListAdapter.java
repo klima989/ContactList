@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -52,6 +54,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
         final Contact contact = mList.get(position);
 
         final TextView contact_name = holder.contactName;
+
+        final  ImageView contact_image = holder.contactImage;
+
+        if(mList.get(position).getContactImage() != null){
+            Picasso.with(mContext)
+                    .load(mList.get(position).getContactImage())
+                    .into(contact_image);
+        }
 
 
         contact_name.setText(contact.getContactName());

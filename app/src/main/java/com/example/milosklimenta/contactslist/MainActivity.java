@@ -20,6 +20,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -109,6 +111,15 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
 
+        }
+        Collections.sort(mList, new ContactComparator());
+    }
+
+    public class ContactComparator implements Comparator<Contact>{
+
+        @Override
+        public int compare(Contact o1, Contact o2) {
+            return  o1.getContactName().compareTo(o2.getContactName());
         }
     }
 }

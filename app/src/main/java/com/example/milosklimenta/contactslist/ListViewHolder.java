@@ -11,6 +11,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
 
     protected TextView contactName;
     protected View linearLayout;
+    protected ImageView contactImage;
 
     public ListViewHolder(View itemView) {
         super(itemView);
@@ -18,6 +19,7 @@ public class ListViewHolder extends RecyclerView.ViewHolder {
         linearLayout = itemView;
 
         contactName = itemView.findViewById(R.id.contactName);
+        contactImage = itemView.findViewById(R.id.contact_image);
 
 
         itemView.setClickable(true);
