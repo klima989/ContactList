@@ -20,8 +20,10 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.Locale;
 
+//Fragment
 public class ContactInfoActivity extends Activity {
 
+    // private
     ImageView mImage;
     TextView mName, mNumber;
     Context mContext;
@@ -33,7 +35,7 @@ public class ContactInfoActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contact_info_activity);
-        inicijalizacija();
+        inicijalizacija();//emgleski
 
         Intent i = getIntent();
         contact = (Contact) i.getSerializableExtra("oneContact");
