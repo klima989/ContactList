@@ -26,10 +26,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
+    //private m na pocetku
     RecyclerView rvContacts;
-
     ListAdapter adapter;
     RecyclerView.LayoutManager mManager;
     ArrayList<Contact> mList;
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 loadContacts();
             } else {
                 Toast.makeText(this, "You need to grant permission", Toast.LENGTH_SHORT).show();
+                //SnackBar
             }
         }
     }
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         rvContacts.setLayoutManager(mManager);
     }
 
+    // PROVIDER classu pogledaj MVP, MVC i MVVM
     public void contactImport() {
 
         ContentResolver cr = getContentResolver();
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.sort(mList, new ContactComparator());
     }
 
+    // SUPER! :)
     public class ContactComparator implements Comparator<Contact>{
 
         @Override
