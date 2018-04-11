@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
-
+    //NIKAD!
     public static List<Contact> mList;
     private Context mContext;
     private int focusedItem = 0;
@@ -57,14 +57,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
 
         final  ImageView contact_image = holder.contactImage;
 
-        if(contact.getContactImage() == null){
+        if(contact.getContactImage() == null) {
             contact_image.setImageResource(R.drawable.avatar);
-        }else{
+        } else {
             Picasso.with(mContext)
                     .load(contact.getContactImage())
                     .into(contact_image);
         }
-
 
         contact_name.setText(contact.getContactName());
         contact_name.setContentDescription(contact.getContactName());
@@ -74,6 +73,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ContactInfoActivity.class);
                 intent.putExtra("oneContact", contact);
+                // constanta public static final NESTO = "oneContact"
                 mContext.startActivity(intent);
             }
         });

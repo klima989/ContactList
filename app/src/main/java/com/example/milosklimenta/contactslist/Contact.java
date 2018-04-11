@@ -2,9 +2,10 @@ package com.example.milosklimenta.contactslist;
 
 import java.io.Serializable;
 
+// Parcelable se koristi u Androidu
 public class Contact implements Serializable {
 
-    private String contactImage, contactName, ContactNumber;
+    private String contactImage, contactName, ContactNumber;// variable malim slovima i m 
     private String id;
 
     public Contact(String contactImage, String contactName, String contactNumber, String id) {

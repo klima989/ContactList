@@ -6,9 +6,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+// moze i u adapter 
 public class ListViewHolder extends RecyclerView.ViewHolder {
 
-
+    // manje space
     protected TextView contactName;
     protected View linearLayout;
     protected ImageView contactImage;
